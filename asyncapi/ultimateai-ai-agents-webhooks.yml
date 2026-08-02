@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.zendesk.com/api-reference/ai-agents/introduction/
+type: Webhooks
+notes: >-
+  No published AsyncAPI document was found for Ultimate.ai or its successor product.
+  The Zendesk AI Agents platform (formerly Ultimate.ai, Advanced add-on) documents a real
+  webhook surface: the platform delivers bot events as POST requests to a CRM-configured
+  endpoint. Captured here as a webhook catalog; do not treat as an AsyncAPI spec.
+webhooks:
+- name: AI Agents Chat Webhook
+  docs: https://developer.zendesk.com/api-reference/ai-agents/chat/chat-webhook/
+  delivery: POST to a configurable endpoint on your application (example path /converse-webhook)
+  response: respond 200 OK; isTeamOnline requires a synchronous JSON boolean isOnline
+  common_fields: [botId, data.eventType, data.platformConversationId]
+  events:
+  - name: sendMessage
+    description: Bot sends a message to the visitor (text, buttons, or carousel formats)
+  - name: escalate
+    description: Bot requests escalation to a human agent
+  - name: isTeamOnline
+    description: Bot checks if a team or agent is available
+- name: AI Agents Ticket Webhook
+  docs: https://developer.zendesk.com/api-reference/ai-agents/ticket/ticket-webhook/
+- name: AI Agents Widget Escalation Webhook
+  docs: https://developer.zendesk.com/api-reference/ai-agents/widget-escalation/widget-escalation-webhook/

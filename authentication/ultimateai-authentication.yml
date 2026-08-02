@@ -1,0 +1,55 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/ultimateai/public-api
+docs: https://developer.zendesk.com/api-reference/ai-agents/authentication/
+notes: >-
+  Ultimate.ai was acquired by Zendesk and its product now ships as Zendesk AI agents
+  (Advanced add-on). Two auth surfaces are documented: the legacy Ultimate.ai Public API
+  (chat.ultimate.ai, Slate docs in github.com/ultimateai/public-api; host now returns 404
+  on probed endpoints) and the successor Zendesk AI Agents API on
+  {subdomain}.zendesk.com/ai-agents/api.
+summary:
+  types: [http-basic, apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+- name: basicAuth (legacy Ultimate.ai Public API)
+  type: http
+  scheme: basic
+  description: >-
+    Legacy Chat Automation endpoint (POST /api/v2/automation on chat.ultimate.ai) used
+    Basic Access Authentication - a Base64 encoding of email:password sent as
+    "Authorization: Basic {basicAuthToken}".
+  sources:
+  - https://github.com/ultimateai/public-api/blob/main/source/includes/_automation.md
+- name: accessToken (legacy Ultimate.ai Public API)
+  type: apiKey
+  in: header
+  parameter: authorization
+  description: >-
+    Legacy Intent Recognition (POST /api/intents) and Delete User Data
+    (POST /api/gdpr/delete-user-data) endpoints took a bot access token in an
+    "authorization" header. Tokens were found in the dashboard under bot settings > Tokens.
+  sources:
+  - https://github.com/ultimateai/public-api/blob/main/source/includes/_intents.md
+  - https://github.com/ultimateai/public-api/blob/main/source/includes/_gdpr.md
+- name: customCrmApiKey (Zendesk AI Agents API)
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: >-
+    Successor AI Agents Chat/Ticket/Widget Escalation APIs authenticate with a Custom CRM
+    API key in the Authorization header, generated from the Custom CRM integration page
+    (docs still reference the Ultimate.ai dashboard). A botid header identifies the bot.
+  sources:
+  - https://developer.zendesk.com/api-reference/ai-agents/authentication/
+  - https://developer.zendesk.com/api-reference/ai-agents/chat/chat/
+- name: organizationApiKey (Zendesk AI Agents API)
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: >-
+    Fallback when no custom CRM integration is configured - an organization API key
+    (Organization management > API Key > Generate) sent with an organizationid HTTP header.
+  sources:
+  - https://developer.zendesk.com/api-reference/ai-agents/authentication/

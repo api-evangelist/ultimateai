@@ -1,0 +1,28 @@
+# Ultimate.ai
+
+> Ultimate.ai was a Helsinki- and Berlin-based customer support automation platform (virtual agents / chatbots with intent recognition), backed by HV Capital and Techstars. It was acquired by Zendesk in 2024; the product now ships as Zendesk AI agents (the "AI agents - Advanced" add-on) and ultimate.ai redirects to zendesk.com. The legacy Ultimate.ai Public API on chat.ultimate.ai is retired (probed endpoints return 404); its Slate docs source survives in the ultimateai GitHub org.
+
+## APIs
+
+- [Zendesk AI Agents API (formerly Ultimate.ai)](https://developer.zendesk.com/api-reference/ai-agents/introduction/): Successor API surface - Chat, Ticket, Widget Escalation APIs + webhooks, Data Export, Delete User Data. Base URL https://{subdomain}.zendesk.com/ai-agents/api; API keys are still generated from the Ultimate.ai dashboard (Custom CRM integration page).
+- [Ultimate.ai Public API (legacy, retired)](https://github.com/ultimateai/public-api): Chat Automation (POST /api/v2/automation), Intent Recognition (POST /api/intents), Delete User Data (POST /api/gdpr/delete-user-data) on https://chat.ultimate.ai with Basic auth / bot access tokens.
+
+## Docs
+
+- [AI Agents developer documentation](https://developer.zendesk.com/documentation/ai-agents)
+- [AI Agents API authentication](https://developer.zendesk.com/api-reference/ai-agents/authentication/)
+- [AI Agents Chat Webhook](https://developer.zendesk.com/api-reference/ai-agents/chat/chat-webhook/)
+- [Legacy Public API docs source (Slate)](https://github.com/ultimateai/public-api)
+- [Custom CRM automation template](https://github.com/ultimateai/custom-crm-automation-template)
+
+## Company
+
+- [Website (redirects to Zendesk AI agents)](https://ultimate.ai/)
+- [GitHub organization](https://github.com/ultimateai)
+
+## Specs
+
+- [APIs.json profile](https://raw.githubusercontent.com/api-evangelist/ultimateai/refs/heads/main/apis.yml)
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/ultimateai/refs/heads/main/authentication/ultimateai-authentication.yml)
+- [Webhook catalog](https://raw.githubusercontent.com/api-evangelist/ultimateai/refs/heads/main/asyncapi/ultimateai-ai-agents-webhooks.yml)
+- [Domain security probe](https://raw.githubusercontent.com/api-evangelist/ultimateai/refs/heads/main/security/ultimateai-domain-security.yml)

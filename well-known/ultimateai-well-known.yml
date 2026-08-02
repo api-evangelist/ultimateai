@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+notes: >-
+  Probed the /.well-known/ discovery surface on the company website and the legacy API
+  host. No documents were found: www.ultimate.ai answers 403 to all probed paths (the
+  host 301s to www.zendesk.com/service/ai/ai-agents), and chat.ultimate.ai answers 404.
+  Absence recorded as valid data; no raw files saved (no 200 responses).
+hosts:
+- host: https://www.ultimate.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 403}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /.well-known/oauth-authorization-server, status: 403}
+  - {path: /.well-known/api-catalog, status: 403}
+  - {path: /.well-known/ai-plugin.json, status: 403}
+  - {path: /llms.txt, status: 403}
+- host: https://chat.ultimate.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}

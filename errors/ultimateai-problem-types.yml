@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/ultimateai/public-api/blob/main/source/includes/_gdpr.md
+format: http-status
+notes: >-
+  Ultimate.ai published no machine-readable error catalog and no RFC 9457 problem+json
+  envelope. The only documented error semantics in the legacy Public API docs are the
+  status codes of the Delete User Data endpoint, captured verbatim below. (The _errors.md
+  include in the docs repo is unmodified Slate "Kittn API" boilerplate and is deliberately
+  NOT captured here.)
+problems:
+- status: 200
+  title: Success
+  detail: Deletion process was successfully completed.
+  source_operation: POST /api/gdpr/delete-user-data (chat.ultimate.ai)
+- status: 400
+  title: Bad Request Error
+  detail: Request data passed was not valid.
+  source_operation: POST /api/gdpr/delete-user-data (chat.ultimate.ai)
+- status: 401
+  title: Auth Error
+  detail: User does not have the right permissions, auth token is invalid or expired.
+  source_operation: POST /api/gdpr/delete-user-data (chat.ultimate.ai)
+- status: 500
+  title: Internal Server Error
+  detail: An unknown server error occurred.
+  source_operation: POST /api/gdpr/delete-user-data (chat.ultimate.ai)

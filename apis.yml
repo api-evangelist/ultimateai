@@ -1,23 +1,87 @@
 aid: ultimateai
 name: Ultimate.ai
-description: 'Ultimate.ai is a company surfaced as a portfolio company of hv-capital, techstars and added
-  to the API Evangelist network as a stub for enrichment. Sector: ai-enterprise-software. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: >-
+  Ultimate.ai was a Helsinki- and Berlin-based customer support automation platform -
+  virtual agents and chatbots with intent recognition and agent-assist - backed by HV
+  Capital and Techstars. Zendesk acquired Ultimate.ai in 2024 and the product now ships
+  as Zendesk AI agents (the "AI agents - Advanced" add-on); ultimate.ai redirects to
+  zendesk.com and the successor AI Agents APIs (Chat, Ticket, Widget Escalation, Data
+  Export, Delete User Data plus webhooks) are documented on developer.zendesk.com, with
+  API keys still generated from the Ultimate.ai dashboard. The legacy Ultimate.ai Public
+  API on chat.ultimate.ai is retired.
 url: https://raw.githubusercontent.com/api-evangelist/ultimateai/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/82862471?v=4
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - hv-capital
 - techstars
+x-acquired-by: zendesk
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Ai Enterprise Software
-apis: []
+- Customer Support
+- Conversational AI
+- Chatbots
+- AI Agents
+- Automation
+- Acquired
+apis:
+- name: Zendesk AI Agents API (formerly Ultimate.ai)
+  description: >-
+    Successor API surface of the Ultimate.ai platform after the Zendesk acquisition -
+    Chat, Ticket, and Widget Escalation APIs with matching webhooks, plus Data Export and
+    Delete User Data. Requires the AI agents - Advanced add-on; authenticates with a
+    Custom CRM or organization API key generated from the Ultimate.ai dashboard.
+  humanURL: https://developer.zendesk.com/api-reference/ai-agents/introduction/
+  baseURL: https://{subdomain}.zendesk.com/ai-agents/api
+  tags:
+  - AI Agents
+  - Chatbots
+  - Webhooks
+  properties:
+  - type: Documentation
+    url: https://developer.zendesk.com/documentation/ai-agents
+  - type: APIReference
+    url: https://developer.zendesk.com/api-reference/ai-agents/introduction/
+  - type: Authentication
+    url: https://developer.zendesk.com/api-reference/ai-agents/authentication/
+- name: Ultimate.ai Public API (legacy, retired)
+  description: >-
+    The original Ultimate.ai Public API on chat.ultimate.ai - Chat Automation
+    (POST /api/v2/automation), Intent Recognition (POST /api/intents), and Delete User
+    Data (POST /api/gdpr/delete-user-data) - documented in a Slate docs repo in the
+    ultimateai GitHub org. Probed 2026-07-21: endpoints return 404; superseded by the
+    Zendesk AI Agents API.
+  humanURL: https://github.com/ultimateai/public-api
+  baseURL: https://chat.ultimate.ai
+  x-status: retired
+  tags:
+  - Chatbots
+  - Intent Recognition
+  - GDPR
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -26,3 +90,19 @@ maintainers:
 common:
 - type: Website
   url: https://ultimate.ai/
+- type: Documentation
+  url: https://developer.zendesk.com/documentation/ai-agents
+- type: APIReference
+  url: https://developer.zendesk.com/api-reference/ai-agents/introduction/
+- type: GitHubOrganization
+  url: https://github.com/ultimateai
+- type: Authentication
+  url: authentication/ultimateai-authentication.yml
+- type: Webhooks
+  url: asyncapi/ultimateai-ai-agents-webhooks.yml
+- type: ErrorCatalog
+  url: errors/ultimateai-problem-types.yml
+- type: LLMsTxt
+  url: llms/ultimateai-llms.txt
+- type: DomainSecurity
+  url: security/ultimateai-domain-security.yml

@@ -42,6 +42,15 @@ modified: '2026-07-21'
 tags:
 - Company
 - Ai Enterprise Software
+- Customer-Support
+- Conversational AI
+- Chatbots
+- AI Agents
+- Automation
+- Acquired
+tags_raw:
+- Company
+- Ai Enterprise Software
 - Customer Support
 - Conversational AI
 - Chatbots
@@ -58,6 +67,10 @@ apis:
   humanURL: https://developer.zendesk.com/api-reference/ai-agents/introduction/
   baseURL: https://{subdomain}.zendesk.com/ai-agents/api
   tags:
+  - AI Agents
+  - Chatbots
+  - Webhook
+  tags_raw:
   - AI Agents
   - Chatbots
   - Webhooks

@@ -10,6 +10,17 @@ description: >-
   API keys still generated from the Ultimate.ai dashboard. The legacy Ultimate.ai Public
   API on chat.ultimate.ai is retired.
 url: https://raw.githubusercontent.com/api-evangelist/ultimateai/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve

@@ -23,15 +23,17 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Self-serve signup
-  confidence: medium
+  label: Unknown
+  confidence: low
   source:
   - authentication
-  generated: '2026-07-22'
+  - security
+  - {url: 'https://ultimate.ai/', status: 301, note: 'declared website redirects to https://www.zendesk.com/service/ai/ai-agents/ — a different registrable domain (ultimate.ai -> zendesk.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
+  generated: '2026-09-03'
   method: derived
 image: https://avatars.githubusercontent.com/u/82862471?v=4
 x-type: company

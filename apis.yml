@@ -55,7 +55,7 @@ modified: '2026-07-21'
 tags:
 - Company
 - Ai Enterprise Software
-- Customer-Support
+- Customer Support
 - Conversational AI
 - Chatbots
 - AI Agents
@@ -70,6 +70,7 @@ tags_raw:
 - AI Agents
 - Automation
 - Acquired
+- Customer-Support
 apis:
 - name: Zendesk AI Agents API (formerly Ultimate.ai)
   description: >-
